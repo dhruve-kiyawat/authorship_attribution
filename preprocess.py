@@ -8,12 +8,12 @@ from spacy.lang.hi import STOP_WORDS as STOP_WORDS_HI
 
 def remove_punctuations(text):
     # Define Hindi punctuation marks
-    hindi_punctuation = "।,;:؟!‘’“”-''–?—.()"
+    hindi_punctuation = "।,;:؟!‘’“”-''–?—.()…*&¬\""
     # Create a regex pattern to match any of the defined punctuation marks
     pattern = f"[{re.escape(hindi_punctuation)}]"
 
     # Replace punctuation with an empty string
-    cleaned_text = re.sub(pattern, '', text)
+    cleaned_text = re.sub(pattern, ' ', text)
     return cleaned_text
 
 # Normalize
